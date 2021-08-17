@@ -10,6 +10,32 @@
   </head>
 
   <body>
+    <% if current_user %>
+      <header class="header d-flex justify-content-between p-3">
+        <div>
+          <%= image_tag("inta.png", :alt => "logo", :width => "50") %>
+        </div>
+        <div>
+          <input type="text" class="d-none d-md-inline" placeholder="Rechercher sur Facebook">
+        </div>
+        <div>
+          <div>Accueil</div>
+          <div>Messagerie</div>
+          <div>Explore</div>
+          <div>Favories</div>
+          <div>
+            Profil
+            <ul>
+              <li>Profil</li>
+              <li>Enregistré</li>
+              <li>Paramètre</li>
+              <li>Changer de compte</li>
+              <li><%= link_to "Se déconnecter", destroy_session_path %></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+    <% end %>
     <% if @user %>
       <% if @user.errors.any? %>
         <div id="error_explanation">

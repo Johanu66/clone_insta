@@ -1,0 +1,18 @@
+
+<%= form_with(model: @user, scope: :session, local: true,url: create_session_path, class: "form") do |form| %>
+
+    <div class="field my-3">
+        <%= form.text_field :email, placeholder: "Adresse email" %>
+    </div>
+
+    <div class="field my-3">
+        <%= form.password_field :password, placeholder: "Mot de passe" %>
+    </div>
+
+    <div class="actions my-3">
+        <%= form.submit "Se connecter", class: "btn btn-primary" %>
+    </div>
+
+    <%= link_to "Créer un compte", new_user_path, class: "btn btn-primary text-white my-3 yet_a_compte" %>
+    
+<% end %>

@@ -1,0 +1,24 @@
+<%= form_with(model: user, local: true) do |form| %>
+
+  <div class="field">
+    <%= form.text_field :name, placeholder: "Nom" %>
+  </div>
+
+  <div class="field">
+    <%= form.text_field :email, placeholder: "Adresse email" %>
+  </div>
+
+  <div class="field">
+    <%= form.password_field :password, placeholder: "Mod de passe" %>
+  </div>
+
+  <div class="field">
+    <%= form.file_field :image %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit "Créer un compte", class: "btn btn-primary text-white my-3 yet_a_compte" %>
+  </div>
+
+  <%= link_to "J'ai déjà un compte", new_session_path, class: "btn btn-primary text-white my-3 yet_a_compte" %>
+<% end %>

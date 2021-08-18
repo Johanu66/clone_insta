@@ -10,7 +10,74 @@
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
  *
+ *= require bootstrap-icons/font/bootstrap-icons.css
  *= require bootstrap/dist/css/bootstrap.min
  *= require_tree .
  *= require_self
  */
+body{
+    background-color: rgb(246, 246, 246);
+}
+.header_container{
+    background-color: white;
+}
+.header{
+    height: 60px;
+}
+.header, .main_container{
+    width: 100%;
+    max-width: 950px;
+    margin: auto;
+}
+.profil_image{
+    border-radius: 50%;
+    background-position: center;
+    background-size: cover;
+}
+.bi{
+    font-size: 1.5rem;
+}
+.header ul{
+    margin: 0px;
+    right: 0px;
+    width: 200px;
+    box-shadow: 0px 0px 1px 1px rgb(216, 209, 209);
+    border-radius: 5px;
+    background-color: white;
+}
+.header ul .bi{
+    font-size: 1rem;
+}
+.header ul a{
+    text-decoration: none;
+    color: black;
+    height: 100%;
+}
+
+
+.parametres .slidebar_left{
+    width: 250px;
+    min-width: 250px;
+}
+.parametres .slidebar_left li:hover{
+    background-color: rgb(246, 246, 246);
+}
+.parametres .label{
+    text-align: right;
+    padding-left: 0px;
+}
+strong{
+    color: #0d6efd;
+    cursor: pointer;
+}
+small{
+    color: rgb(136, 136, 136);
+}
+
+
+@media screen and (max-width: 767px) {
+    .big_profil_image{
+        width: 90px;
+        height: 90px;
+    }
+}

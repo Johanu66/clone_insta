@@ -1,6 +1,72 @@
-<h1>Editing User</h1>
+<div class="parametres border d-flex w-100 bg-white mt-4">
+    <div class="slidebar_left border d-none d-md-block">
+        <ul class="list-unstyled border">
+            <li class="p-3">Editer le profil </li>
+            <li class="p-3">Changer le mot de passe</li>
+            <li class="p-3">Applications et sites Web </li>
+            <li class="p-3">Courriel et SMS </li>
+            <li class="p-3">Notifications push </li>
+            <li class="p-3">Gérer les contacts </li>
+            <li class="p-3">Confidentialité et sécurité </li>
+            <li class="p-3">Activité de connexion </li>
+            <li class="p-3">Courriels d'Instagram </li>
+            <li class="p-3"><strong>Passer au compte professionnel</strong></li>
+        </ul>
+        <div class="p-3">
+            <div class="my-2">FACEBOOK</div>
+            <div class="my-2"><strong>Centre des comptes</strong></div>
+            <div class="my-2"><small>Contrôlez les paramètres des expériences connectées sur Instagram, l'application Facebook et Messenger, y compris le partage d'histoires et de publications et la connexion.</small></div>
+        </div>
+    </div>
+    <div class="p-4 flex-grow-1 border">
+        <table class="w-100">
+        <%= form_with(model: @user, local: true, url: user_path) do |form| %>
+            <tr>
+                <td class="label pl-0 p-4 w-25"><div class="profil_image d-inline-block" style="width: 50px; height: 50px; background-image: url(<%= current_user.image.url %>);"></div></td>
+                <td class="w-50">
+                    <h3><%= @user.name %></h3>
+                    <div><label for="file_input"><strong>Changer la photo de profil</strong></label></div>
+                </td>
+            </tr>
 
-<%= render 'form', user: @user %>
+            <tr class="field">
+                <td class="label p-4">Nom</td>
+                <td>
+                    <%= form.text_field :name, placeholder: "Nom", class: "form-control" %>
+                </td>
+            </tr>
 
-<%= link_to 'Show', @user %> |
-<%= link_to 'Back', users_path %>
+            <tr class="field">
+                <td class="label p-4"></td>
+                <td>
+                    <small>
+                        Aidez les gens à découvrir votre compte en utilisant le nom sous lequel vous êtes connu : soit votre nom complet, votre surnom ou le nom de votre entreprise.
+                        <br><br>Vous ne pouvez changer votre nom que deux fois dans les 14 jours.
+                    </small>
+                </td>
+            </tr>
+
+            <tr class="field">
+                <td class="label p-4">Email</td>
+                <td>
+                    <%= form.text_field :email, placeholder: "Adresse email", class: "form-control" %>
+                </td>
+            </tr>
+
+            <tr class="field">
+                <td class="label p-4">Modifier a photo de profil</td>
+                <td>
+                    <%= form.file_field :image, id: "file_input", class: "form-control" %>
+                </td>
+            </tr>
+
+            <tr class="actions">
+                <td></td>
+                <td>
+                    <%= form.submit submit_text, class: "btn btn-primary text-white my-3" %>
+                </td>
+            </tr>
+        <% end %>
+        </table>
+    </div>
+</div>

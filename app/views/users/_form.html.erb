@@ -8,17 +8,21 @@
     <%= form.text_field :email, placeholder: "Adresse email" %>
   </div>
 
-  <div class="field">
-    <%= form.password_field :password, placeholder: "Mod de passe" %>
-  </div>
+  <% if action_name == 'new' || action_name == 'create' %>
+    <div class="field">
+      <%= form.password_field :password, placeholder: "Mot de passe" %>
+    </div>
+  <% end %>
 
   <div class="field">
     <%= form.file_field :image %>
   </div>
 
   <div class="actions">
-    <%= form.submit "Créer un compte", class: "btn btn-primary text-white my-3 yet_a_compte" %>
+    <%= form.submit submit_text, class: "btn btn-primary text-white my-3 yet_a_compte" %>
   </div>
 
-  <%= link_to "J'ai déjà un compte", new_session_path, class: "btn btn-primary text-white my-3 yet_a_compte" %>
+  <% if action_name == 'new' || action_name == 'create' %>
+    <%= link_to "J'ai déjà un compte", new_session_path, class: "btn btn-primary text-white my-3 yet_a_compte" %>
+  <% end %>
 <% end %>

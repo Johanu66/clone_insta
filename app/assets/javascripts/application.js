@@ -16,3 +16,10 @@
 //= require jquery/dist/jquery.js
 //= require bootstrap/dist/js/bootstrap.min
 //= require_tree .
+$(document).on("click", "body", function(){
+    $("#drop_down_profil").slideUp();
+});
+$(document).on("click", "#profil", function(){
+    $("#drop_down_profil").slideToggle();
+    e.previous();
+});

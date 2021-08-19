@@ -1,6 +1,12 @@
-<h1>Editing Post</h1>
-
-<%= render 'form', post: @post %>
-
-<%= link_to 'Show', @post %> |
-<%= link_to 'Back', posts_path %>
+<div class="d-flex">
+  <div class="flex-grow-1" id="main_content" style="width: 60%; margin:0px; padding: 0px;">
+    <div class="d-flex justify-content-between mt-3">
+      <h1>Editer un post</h1>
+      <div><%= link_to 'Retour', posts_path, class: "btn btn-primary" %></div>
+    </div>
+    <div>
+      <%= render 'form', post: @post %>
+    </div>
+  </div>
+  <%= render 'sugestions' %>
+</div>

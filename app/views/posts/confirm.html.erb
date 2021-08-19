@@ -1,8 +1,7 @@
 <div class="d-flex">
   <div class="flex-grow-1" id="main_content" style="width: 60%; margin:0px; padding: 0px;">
     <div class="d-flex justify-content-between mt-3">
-      <h1>Votre nouveau post</h1>
-      <div><%= link_to 'Nouveau post', new_post_path, class: "btn btn-primary" %></div>
+      <h1>Les informations suivantes doivent être publiée.</h1>
     </div>
     <div class="card my-5">
       <div class="card-header">
@@ -16,15 +15,21 @@
       </div>
       <div class="card-body">
         <div><%= image_tag(@post.image.url, class: "w-100") if @post.image && @post.image.url %></div>
-
         <h4><strong><%= @post.title %></strong></h4>
         <div><%= @post.content %></div>
       </div>
-      <div class="card-footer d-flex justify-content-around">
-        <% if @post.user.id==current_user.id %>
-          <div><%= link_to 'Edit', edit_post_path(@post), class: "btn btn-primary" %></div>
+      <div class="card-footer">
+        <%= form_with(model: @post, local: true) do |form| %>
+          <%= form.hidden_field :title %>
+          <%= form.hidden_field :content %>
+          <%= form.hidden_field :photo%>
+          <%= form.hidden_field :photo_cache %>
+          <%= form.hidden_field :user_id %>
+          <div class="d-flex justify-content-around">
+            <div><%= form.submit  "Publier", class: "btn btn-primary text-white" %></div>
+            <div><%= link_to "Annuler", new_post_path, class: "btn btn-danger text-white" %></div>
+          <div>
         <% end %>
-        <div><%= link_to 'Retour à l\'accueil', posts_path, class: "btn btn-primary" %></div>
       </div>
     </div>
   </div>

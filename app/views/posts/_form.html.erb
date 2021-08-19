@@ -1,7 +1,7 @@
-<%= form_with(model: post, local: true) do |form| %>
+<%= form_with(model: post, local: true, url: url_form) do |form| %>
   <% if post.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(post.errors.count, "error") %> prohibited this post from being saved:</h2>
+    <div id="error_explanation" style="color: red;">
+      <h3><%= pluralize(post.errors.count, "erreur") %> interdit l'enregistrement de ce post</h3>
 
       <ul>
       <% post.errors.full_messages.each do |message| %>
@@ -11,27 +11,22 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :title %>
-    <%= form.text_field :title %>
+  <div class="form-group field m-5">
+    <label for="title">Titre</label>
+    <%= form.text_field :title, class: "form-control", id: "title", placeholder: "Titre" %>
   </div>
 
-  <div class="field">
-    <%= form.label :content %>
-    <%= form.text_area :content %>
+  <div class="form-group field m-5">
+    <label for="content">Contenu</label>
+    <%= form.text_area :content, class: "form-control", id: "content", placeholder: "Contenu" %>
   </div>
 
-  <div class="field">
-    <%= form.label :image %>
-    <%= form.text_area :image %>
+  <div class="form-group field m-5">
+    <label for="image">Image</label>
+    <%= form.file_field :image, class: "form-control", id: "image", placeholder: "Image" %>
   </div>
 
-  <div class="field">
-    <%= form.label :user_id %>
-    <%= form.text_field :user_id %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit %>
+  <div class="actions m-5">
+    <%= form.submit text_submit, class: "btn btn-primary" %>
   </div>
 <% end %>

@@ -1,0 +1,98 @@
+<div style="width: 300px;min-width: 300px;"></div>
+<div id="sugestions" style="width: 300px;min-width: 300px;position: fixed; top: 60px;">
+    <div class="d-flex justify-content-between align-items-center">
+        <div  class="d-flex align-items-center">
+        <div class="profil_image m-2" style="width: 50px; height: 50px; background-image: url(<%= current_user.image.url %>);"></div>
+        <div>
+            <div><%= current_user.name %></div>
+            <div><small><%= current_user.name %></small></div>
+        </div>
+        </div>
+        <div>
+        <strong>Changer</strong>
+        </div>
+    </div>
+    <div class="d-flex justify-content-between m-2">
+        <div>Des suggestions pour vous</div>
+        <div>Voir tout</div>
+    </div>
+    <div class="d-flex justify-content-between align-items-center">
+        <div  class="d-flex align-items-center">
+        <div class="profil_image m-2" style="width: 40px; height: 40px; background-image: url(<%= current_user.image.url %>);"></div>
+        <div>
+            <div>Delphine</div>
+            <div><small>Suivi par Jacques</small></div>
+        </div>
+        </div>
+        <div>
+        <strong>Suivre</strong>
+        </div>
+    </div>
+    <div class="d-flex justify-content-between align-items-center">
+        <div  class="d-flex align-items-center">
+        <div class="profil_image m-2" style="width: 40px; height: 40px; background-image: url(<%= current_user.image.url %>);"></div>
+        <div>
+            <div>Esaïe</div>
+            <div><small>Suivi par Paul</small></div>
+        </div>
+        </div>
+        <div>
+        <strong>Suivre</strong>
+        </div>
+    </div>
+    <div class="d-flex justify-content-between align-items-center">
+        <div  class="d-flex align-items-center">
+        <div class="profil_image m-2" style="width: 40px; height: 40px; background-image: url(<%= current_user.image.url %>);"></div>
+        <div>
+            <div>Romérick</div>
+            <div><small>Suivi par Alphonse</small></div>
+        </div>
+        </div>
+        <div>
+        <strong>Suivre</strong>
+        </div>
+    </div>
+    <div class="d-flex justify-content-between align-items-center">
+        <div  class="d-flex align-items-center">
+        <div class="profil_image m-2" style="width: 40px; height: 40px; background-image: url(<%= current_user.image.url %>);"></div>
+        <div>
+            <div>Grâce</div>
+            <div><small>Suivi par Rachid</small></div>
+        </div>
+        </div>
+        <div>
+        <strong>Suivre</strong>
+        </div>
+    </div>
+    <div class="d-flex justify-content-between align-items-center">
+        <div  class="d-flex align-items-center">
+        <div class="profil_image m-2" style="width: 40px; height: 40px; background-image: url(<%= current_user.image.url %>);"></div>
+        <div>
+            <div>Reine</div>
+            <div><small>Nouveau sur Instagram</small></div>
+        </div>
+        </div>
+        <div>
+        <strong>Suivre</strong>
+        </div>
+    </div>
+    <div class="d-flex justify-content-between align-items-center">
+        <div  class="d-flex align-items-center">
+        <div class="profil_image m-2" style="width: 40px; height: 40px; background-image: url(<%= current_user.image.url %>);"></div>
+        <div>
+            <div>Amos</div>
+            <div><small>Nouveau sur Instagram</small></div>
+        </div>
+        </div>
+        <div>
+        <strong>Suivre</strong>
+        </div>
+    </div>
+</div>
+<script>
+    function margin_left_of_sugestions(){
+        $("#sugestions").css("margin-left", $("#main_content").width());
+    }
+    $(document).ready(margin_left_of_sugestions);
+    $( window ).resize(margin_left_of_sugestions);
+</script>

@@ -20,6 +20,7 @@ body{
 }
 .header_container{
     background-color: white;
+    z-index: 10;
 }
 .header{
     height: 60px;
@@ -74,6 +75,9 @@ small{
     color: rgb(136, 136, 136);
 }
 
+.main_container{
+    padding-top: 60px;
+}
 
 @media screen and (max-width: 767px) {
     .big_profil_image{

@@ -19,54 +19,56 @@
         </div>
     </div>
     <div class="p-4 flex-grow-1 border">
-        <table class="w-100">
-        <%= form_with(model: @user, local: true, url: user_path) do |form| %>
-            <tr>
-                <td class="label pl-0 p-4 w-25"><div class="profil_image d-inline-block" style="width: 50px; height: 50px; background-image: url(<%= current_user.image.url %>);"></div></td>
-                <td class="w-50">
-                    <h3><%= @user.name %></h3>
-                    <div><label for="file_input"><strong>Changer la photo de profil</strong></label></div>
-                </td>
-            </tr>
+        <%= form_with(model: @user, local: true) do |form| %>
+            <table class="w-100">
+                <tr>
+                    <td class="label pl-0 p-4 w-25"><div class="profil_image d-inline-block" style="width: 50px; height: 50px;
+                    background-image: url(<%= current_user.image.url %>);"></div></td>
+                    <td class="w-50">
+                        <h3><%= @user.name %></h3>
+                        <div><label for="file_input"><strong>Changer la photo de profil</strong></label></div>
+                    </td>
+                </tr>
 
-            <tr class="field">
-                <td class="label p-4">Nom</td>
-                <td>
-                    <%= form.text_field :name, placeholder: "Nom", class: "form-control" %>
-                </td>
-            </tr>
+                <tr class="field">
+                    <td class="label p-4">Nom</td>
+                    <td>
+                        <%= form.text_field :name, placeholder: "Nom", class: "form-control" %>
+                    </td>
+                </tr>
 
-            <tr class="field">
-                <td class="label p-4"></td>
-                <td>
-                    <small>
-                        Aidez les gens à découvrir votre compte en utilisant le nom sous lequel vous êtes connu : soit votre nom complet, votre surnom ou le nom de votre entreprise.
-                        <br><br>Vous ne pouvez changer votre nom que deux fois dans les 14 jours.
-                    </small>
-                </td>
-            </tr>
+                <tr class="field">
+                    <td class="label p-4"></td>
+                    <td>
+                        <small>
+                            Aidez les gens à découvrir votre compte en utilisant le nom sous lequel vous êtes connu : soit votre nom
+                            complet, votre surnom ou le nom de votre entreprise.
+                            <br><br>Vous ne pouvez changer votre nom que deux fois dans les 14 jours.
+                        </small>
+                    </td>
+                </tr>
 
-            <tr class="field">
-                <td class="label p-4">Email</td>
-                <td>
-                    <%= form.text_field :email, placeholder: "Adresse email", class: "form-control" %>
-                </td>
-            </tr>
+                <tr class="field">
+                    <td class="label p-4">Email</td>
+                    <td>
+                        <%= form.text_field :email, placeholder: "Adresse email", class: "form-control" %>
+                    </td>
+                </tr>
 
-            <tr class="field">
-                <td class="label p-4">Modifier a photo de profil</td>
-                <td>
-                    <%= form.file_field :image, id: "file_input", class: "form-control" %>
-                </td>
-            </tr>
+                <tr class="field">
+                    <td class="label p-4">Modifier a photo de profil</td>
+                    <td>
+                        <%= form.file_field :image, id: "file_input", class: "form-control" %>
+                    </td>
+                </tr>
 
-            <tr class="actions">
-                <td></td>
-                <td>
-                    <%= form.submit submit_text, class: "btn btn-primary text-white my-3" %>
-                </td>
-            </tr>
+                <tr class="actions">
+                    <td></td>
+                    <td>
+                        <%= form.submit submit_text, class: "btn btn-primary text-white my-3" %>
+                    </td>
+                </tr>
+            </table>
         <% end %>
-        </table>
     </div>
 </div>

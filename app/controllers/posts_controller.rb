@@ -19,9 +19,18 @@ class PostsController < ApplicationController
   def edit
   end
 
+  def confirm
+    @post = Post.new(post_params)
+    @post.user_id = current_user.id
+    if @post.invalid?
+      render :new
+    end
+  end
+
   # POST /posts or /posts.json
   def create
     @post = Post.new(post_params)
+    @post.user_id = current_user.id
 
     respond_to do |format|
       if @post.save
@@ -64,6 +73,6 @@ class PostsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def post_params
-      params.require(:post).permit(:title, :content, :image, :image_cache, :user_id)
+      params.require(:post).permit(:title, :content, :image, :image_cache)
     end
 end

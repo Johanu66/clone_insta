@@ -50,3 +50,5 @@ gem 'mimemagic'
 gem 'bcrypt'
 
 gem 'mini_racer'
+
+gem 'faker'

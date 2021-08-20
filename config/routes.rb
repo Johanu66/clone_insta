@@ -6,4 +6,5 @@ Rails.application.routes.draw do
   get '/sessions/new', to: 'sessions#new', as: 'new_session'
   post '/sessions/new' , to: 'sessions#create', as: 'create_session'
   get '/sessions/destroy' , to: 'sessions#destroy', as: 'destroy_session'
+  resources :favorites, only: [:index, :create, :destroy]
 end

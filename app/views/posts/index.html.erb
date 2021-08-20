@@ -21,12 +21,24 @@
           <h4><strong><%= post.title %></strong></h4>
           <div><%= post.content %></div>
         </div>
-        <% if post.user.id==current_user.id %>
-          <div class="card-footer d-flex justify-content-around">
+        
+        <div class="card-footer d-flex justify-content-around">
+          <% unless post.user_id == current_user.id %>
+            <div>
+              <% @favorite = current_user.favorites.find_by(post_id: post.id) %>
+              <% if @favorite.present? %>
+                <%= link_to 'Supprimer le favori', favorite_path(id: @favorite.id), method: :delete, class: 'btn btn-danger' %>
+              <% else %>
+                <%= link_to 'Préféré', favorites_path(post_id: post.id), method: :post, class: 'btn btn-primary' %>
+              <% end %>
+            </div>
+          <% end %>
+          <% if post.user_id==current_user.id %>
             <div><%= link_to 'Edit', edit_post_path(post), class: "btn btn-primary" %></div>
             <div><%= link_to 'Destroy', post, class: "btn btn-primary", method: :delete, data: { confirm: 'Are you sure?' } %></div>
-          </div>
           <% end %>
+        </div>
+          
       </div>
     <% end %>
   </div>

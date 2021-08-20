@@ -1,0 +1,33 @@
+<div class="d-flex">
+  <div class="flex-grow-1" id="main_content" style="width: 60%; margin:0px; padding: 0px;">
+    <div class="d-flex justify-content-between mt-3">
+      <h1>Mes favorites</h1>
+      <div><%= link_to 'Nouveau favorite', posts_path, class: "btn btn-primary" %></div>
+    </div>
+    <% @favorites.each do |favorite| %>
+      <div class="card my-5">
+        <div class="card-header">
+          <div  class="d-flex align-items-center">
+            <div class="profil_image m-2" style="width: 40px; height: 40px; background-image: url(<%= favorite.post.user.image.url %>);"></div>
+            <div>
+              <div><%= favorite.user.name %></div>
+              <div><small><%= favorite.user.email %></small></div>
+            </div>
+          </div>
+        </div>
+        <div class="card-body">
+          <div><%= image_tag(favorite.post.image.url, class: "w-100") if favorite.post.image && favorite.post.image.url %></div>
+
+          <h4><strong><%= favorite.post.title %></strong></h4>
+          <div><%= favorite.post.content %></div>
+        </div>
+        
+        <div class="card-footer d-flex justify-content-around">
+          <%= link_to 'Supprimer le favori', favorite_path(id: favorite.id), method: :delete, class: 'btn btn-danger' %>
+        </div>
+          
+      </div>
+    <% end %>
+  </div>
+  <%= render 'sugestions' %>
+</div>

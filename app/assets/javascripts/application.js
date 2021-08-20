@@ -18,6 +18,7 @@
 //= require_tree .
 $(document).on("click", "body", function(){
     $("#drop_down_profil").slideUp();
+    e.previous();
 });
 $(document).on("click", "#profil", function(){
     $("#drop_down_profil").slideToggle();

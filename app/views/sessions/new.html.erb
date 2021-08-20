@@ -1,18 +1,51 @@
+<div class="d-flex flex-column" style="min-height: 90vh;">
+    <div class="d-flex align-items-center justify-content-evenly flex-grow-1">
+        <div>
+            <%= image_tag("telephone.png", style: "width: 100%") %>
+        </div>
+        <div>
+            <%= form_with(model: @user, scope: :session, local: true,url: create_session_path, class: "form") do |form| %>
+                <div class="p-5 border" style="background-color: white;">
+                    <div>
+                        <%= image_tag("inta.png", style: "width: 100%") %>
+                    </div>
 
-<%= form_with(model: @user, scope: :session, local: true,url: create_session_path, class: "form") do |form| %>
+                    <div class="field my-3">
+                        <%= form.text_field :email, placeholder: "Adresse email", class: "form-control" %>
+                    </div>
 
-    <div class="field my-3">
-        <%= form.text_field :email, placeholder: "Adresse email" %>
+                    <div class="field my-3">
+                        <%= form.password_field :password, placeholder: "Mot de passe", class: "form-control" %>
+                    </div>
+
+                    <div class="actions my-3">
+                        <%= form.submit "Se connecter", class: "btn btn-primary w-100" %>
+                    </div>
+
+                    <%= link_to "Créer un compte", new_user_path, class: "btn btn-primary text-white my-3 yet_a_compte w-100" %>
+                </div>
+            <% end %>
+            <div class="d-flex justify-content-between mt-5">
+                <div><%= image_tag("app_store.png", width: "150px") %></div>
+                <div><%= image_tag("google_play.png", width: "150px") %></div>
+            </div>
+        </div>
     </div>
-
-    <div class="field my-3">
-        <%= form.password_field :password, placeholder: "Mot de passe" %>
+    <div class="text-center p-5">
+        <small class="m-4">À propos</small>
+        <small class="m-4">Blog</small>
+        <small class="m-4">Emplois</small>
+        <small class="m-4">Aider</small>
+        <small class="m-4">API</small>
+        <small class="m-4">Intimité</small>
+        <small class="m-4">termes</small>
+        <small class="m-4">Principaux comptes</small>
+        <small class="m-4">Hashtags</small>
+        <small class="m-4">Emplacements</small>
+        <small class="m-4">Instagram Lite</small>
+        <div class="mt-4">
+            <small class="m-4">Anglais</small>
+            <small class="m-4">© 2021 Instagram de Facebook</small>
+        </div>
     </div>
-
-    <div class="actions my-3">
-        <%= form.submit "Se connecter", class: "btn btn-primary" %>
-    </div>
-
-    <%= link_to "Créer un compte", new_user_path, class: "btn btn-primary text-white my-3 yet_a_compte" %>
-    
-<% end %>
+</div>

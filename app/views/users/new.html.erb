@@ -1,3 +1,31 @@
-<h1>Nouvel utilisateur</h1>
-
-<%= render 'form', user: @user %>
+<div class="d-flex flex-column" style="min-height: 90vh;">
+    <div class="d-flex align-items-center justify-content-evenly flex-grow-1">
+        <div>
+            <%= image_tag("telephone.png", style: "width: 100%") %>
+        </div>
+        <div>
+            <%= render 'form', user: @user %>
+            <div class="d-flex justify-content-between mt-5">
+                <div><%= image_tag("app_store.png", width: "150px") %></div>
+                <div><%= image_tag("google_play.png", width: "150px") %></div>
+            </div>
+        </div>
+    </div>
+    <div class="text-center p-5">
+        <small class="m-4">À propos</small>
+        <small class="m-4">Blog</small>
+        <small class="m-4">Emplois</small>
+        <small class="m-4">Aider</small>
+        <small class="m-4">API</small>
+        <small class="m-4">Intimité</small>
+        <small class="m-4">termes</small>
+        <small class="m-4">Principaux comptes</small>
+        <small class="m-4">Hashtags</small>
+        <small class="m-4">Emplacements</small>
+        <small class="m-4">Instagram Lite</small>
+        <div class="mt-4">
+            <small class="m-4">Anglais</small>
+            <small class="m-4">© 2021 Instagram de Facebook</small>
+        </div>
+    </div>
+</div>

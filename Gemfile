@@ -48,3 +48,5 @@ gem 'mini_magick'
 gem 'mimemagic'
 
 gem 'bcrypt'
+
+gem 'mini_racer'

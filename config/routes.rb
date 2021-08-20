@@ -7,4 +7,5 @@ Rails.application.routes.draw do
   post '/sessions/new' , to: 'sessions#create', as: 'create_session'
   get '/sessions/destroy' , to: 'sessions#destroy', as: 'destroy_session'
   resources :favorites, only: [:index, :create, :destroy]
+  mount LetterOpenerWeb::Engine, at: "/letter_opener" if Rails.env.development?
 end

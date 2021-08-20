@@ -22,8 +22,8 @@
         <%= form_with(model: @post, local: true) do |form| %>
           <%= form.hidden_field :title %>
           <%= form.hidden_field :content %>
-          <%= form.hidden_field :photo%>
-          <%= form.hidden_field :photo_cache %>
+          <%= form.hidden_field :image%>
+          <%= form.hidden_field :image_cache %>
           <%= form.hidden_field :user_id %>
           <div class="d-flex justify-content-around">
             <div><%= form.submit  "Publier", class: "btn btn-primary text-white" %></div>
